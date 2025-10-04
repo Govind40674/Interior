@@ -137,7 +137,9 @@ body {
 .section-reviews {
   padding: 20px;
   background: #fff;
+  text-align:center;
 }
+  
 
 .section-reviews .container2 {
   display: inline-block;
