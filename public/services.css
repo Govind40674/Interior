@@ -35,8 +35,9 @@ html, body {
   padding: 20px 0;
 }
 .container img {
-  width: 150px;
+  width: 250px;
   height: auto;
+  border-radius:50%;
 }
 
 /* Navigation */
