@@ -1,4 +1,4 @@
-Reset */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -7,7 +7,7 @@ Reset */
 
 body {
   font-family: "Poppins", sans-serif;
-  background: #222; /* fallback */
+  background: #222;
   color: #f5f5f5;
   line-height: 1.7;
 }
@@ -44,7 +44,7 @@ body {
 }
 
 .content a:hover {
-  color: #00aaff; /* hover blue */
+  color: #00aaff;
 }
 
 /* ===== Hero Section ===== */
@@ -56,6 +56,7 @@ body {
   padding: 50px 10%;
   background: rgba(0, 0, 0, 0.7);
   flex-wrap: wrap;
+  text-align: center;
 }
 
 .logo2-img img {
@@ -67,25 +68,49 @@ body {
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
-/* ===== Text Section ===== */
-.logo2 .paragraph {
-  max-width: 650px;
-  font-size: 16px;
-  color: #ddd;
-}
-
-.logo2 .paragraph h1 {
+/* ===== Headings ===== */
+.logo2 h1 {
   font-size: 36px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   color: #fff;
   font-weight: 600;
+}
+
+.page {
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 4px solid orange;
+  border-radius: 8px;
+  text-align: left;
+}
+
+.page h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: orange;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  display: inline-block;
+}
+
+.page h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(135deg, #43cea2, #185a9d);
+  margin: 10px auto 0;
+  border-radius: 2px;
 }
 
 /* ===== Responsive Design ===== */
 @media (max-width: 1024px) {
   .logo2 {
     flex-direction: column;
-    text-align: center;
   }
 
   .logo2-img img {
@@ -93,7 +118,7 @@ body {
     height: 280px;
   }
 
-  .logo2 .paragraph h1 {
+  .logo2 h1 {
     font-size: 28px;
   }
 }
@@ -108,13 +133,17 @@ body {
     font-size: 16px;
   }
 
-  .logo2 .paragraph {
+  .page {
     font-size: 15px;
-    padding: 0 10px;
+    padding: 15px;
   }
 
-  .logo2 .paragraph h1 {
+  .logo2 h1 {
     font-size: 24px;
+  }
+
+  .page h2 {
+    font-size: 20px;
   }
 }
 
@@ -132,7 +161,11 @@ body {
     font-size: 14px;
   }
 
-  .logo2 .paragraph h1 {
+  .logo2 h1 {
     font-size: 20px;
+  }
+
+  .page h2 {
+    font-size: 18px;
   }
 }
