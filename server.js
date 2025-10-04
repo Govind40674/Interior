@@ -126,7 +126,7 @@ try{
 app.post("/login-push", csrfProtection,async (req, res) => {
   const { username,email, password } = req.body;
   const user = await login.findOne({username:username,email:email });
-  console.log(user);
+  // console.log(user);
 
   if (user && user.password == password) {
     // req.session.username=username;

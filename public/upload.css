@@ -27,26 +27,53 @@ body {
   max-width: 80px;
   margin: 0 15px;
 }
-/* Logout button styles */
+/* Container for logout */
 .logout {
-  position: fixed;   /* stays in place even when scrolling */
+  position: fixed;   /* stays fixed even while scrolling */
   top: 15px;         /* distance from top */
   right: 20px;       /* distance from right */
-  z-index: 1000;     /* always on top */
+  z-index: 2000;     /* keeps it above all other elements */
 }
 
+/* Anchor styling */
+.logout a {
+  display: inline-block;
+}
+
+/* Logout icon */
 .logout img.logout-2 {
-  width: 35px;       /* size of the icon */
+  width: 35px;        /* default size */
   height: auto;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
+/* Hover effect */
 .logout img.logout-2:hover {
-  transform: scale(1.2); /* zoom effect on hover */
+  transform: scale(1.15);
+  opacity: 0.9;
 }
 
-/* General Form Style */
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .logout img.logout-2 {
+    width: 30px;   /* slightly smaller on tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .logout {
+    top: 10px;
+    right: 15px;
+  }
+  .logout img.logout-2 {
+    width: 25px;   /* smaller on mobiles */
+  }
+}
+
+
+
+
 form {
   background: #fff;
   padding: 25px 30px;
