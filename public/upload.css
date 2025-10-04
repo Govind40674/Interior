@@ -27,6 +27,24 @@ body {
   max-width: 80px;
   margin: 0 15px;
 }
+/* Logout button styles */
+.logout {
+  position: fixed;   /* stays in place even when scrolling */
+  top: 15px;         /* distance from top */
+  right: 20px;       /* distance from right */
+  z-index: 1000;     /* always on top */
+}
+
+.logout img.logout-2 {
+  width: 35px;       /* size of the icon */
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.logout img.logout-2:hover {
+  transform: scale(1.2); /* zoom effect on hover */
+}
 
 /* General Form Style */
 form {
