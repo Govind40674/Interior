@@ -27,6 +27,9 @@
    <textarea name="content"  placeholder="enter content" id="content"></textarea>
    
   <button class="submit" >Submit</button>
+  <% if(error1){ %>
+  <p class="error1" style="color: red;"><%= error1 %></p>
+  <% } %>
   <a href="/previous-services">Previous Services</a>
   </form>
   <form method="POST" enctype="multipart/form-data" action="/upload-client" class="container2">
@@ -36,6 +39,9 @@
     <label for="client">Client:</label>
     <input type="file" name="client" id="client">
     <button type="submit">Submit</button>
+      <% if(error2){ %>
+  <p class="error" style="color: red;"><%= error2 %></p>
+  <% } %>
     <a href="/previous-clients">Previous Clients</a>
   </form>
   <form method="POST" action="/customer" class="customer" enctype="multipart/form-data">
@@ -49,6 +55,9 @@
     <textarea name="review" id="review" placeholder="enter review"></textarea>
     
     <button type="submit">Submit</button>
+      <% if(error3){ %>
+  <p class="error" style="color: red;"><%= error3 %></p>
+  <% } %>
     <a href="/previous-reviews">Previous Reviews</a>
   </form>
   
