@@ -32,8 +32,5 @@ const upload = multer({ storage, fileFilter });
 
 module.exports = upload;
 
-// const upload = multer({ storage });
-
-// module.exports = upload;
 
 
