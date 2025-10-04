@@ -63,7 +63,11 @@ body {
   width: 350px;
   height: 350px;
   border-radius: 50%;
-  object-fit: cover;
+  object-fit:cover;
+
+
+
+
   border: 6px solid #fff;
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
