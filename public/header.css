@@ -1,133 +1,138 @@
-
 /* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
 }
 
 body {
-  background: #f9f9f9;
-  color: #333;
-  line-height: 1.6;
+  font-family: "Poppins", sans-serif;
+  background: #222; /* fallback */
+  color: #f5f5f5;
+  line-height: 1.7;
 }
 
-
-/* Top Logo */
+/* ===== Top Logo ===== */
 .container {
-  text-align: center;
-  padding: 15px;
-  background: #fff;
-  border-bottom: 2px solid #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
 }
 
 .container .image img {
-  max-width:160px;
-  height:auto;
-  border-radius:5%;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
-/* Navigation */
+/* ===== Navigation ===== */
 .content {
   display: flex;
   justify-content: center;
-  gap: 30px;
-  background: linear-gradient(135deg, #43cea2, #185a9d);
+  gap: 40px;
   padding: 15px 0;
 }
 
 .content a {
-  color: #fff;
   text-decoration: none;
+  color: orange;
+  font-size: 18px;
   font-weight: 500;
-  font-size: 16px;
-  position: relative;
-  transition: color 0.3s;
-}
-
-.content a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -5px;
-  width: 0;
-  height: 2px;
-  background: #fff;
-  transition: width 0.3s;
+  transition: color 0.3s ease;
 }
 
 .content a:hover {
-  color: #ffd700;
+  color: #00aaff; /* hover blue */
 }
 
-.content a:hover::after {
-  width: 100%;
-}
-
-/* Logo + Welcome Section */
+/* ===== Hero Section ===== */
 .logo2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 40px 10%;
-  background: #fff;
-  gap: 30px;
+  gap: 50px;
+  padding: 50px 10%;
+  background: rgba(0, 0, 0, 0.7);
   flex-wrap: wrap;
 }
 
 .logo2-img img {
-  max-width: 220px;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid #fff;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
-/* Welcome Text */
-.paragraph {
-  max-width: 700px;
+/* ===== Text Section ===== */
+.logo2 .paragraph {
+  max-width: 650px;
   font-size: 16px;
-  color: #444;
+  color: #ddd;
 }
 
-.paragraph h1 {
-  font-size: 28px;
-  margin-bottom: 15px;
-  color: #185a9d;
-  letter-spacing: 1px;
-  position: relative;
+.logo2 .paragraph h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #fff;
+  font-weight: 600;
 }
 
-.paragraph h1::after {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 3px;
-  background: #43cea2;
-  margin-top: 8px;
-  border-radius: 2px;
-}
-
-/* Responsive */
-@media (max-width: 900px) {
+/* ===== Responsive Design ===== */
+@media (max-width: 1024px) {
   .logo2 {
     flex-direction: column;
     text-align: center;
   }
 
-  .paragraph {
-    font-size: 15px;
+  .logo2-img img {
+    width: 280px;
+    height: 280px;
   }
 
-  .paragraph h1 {
+  .logo2 .paragraph h1 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .content {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .content a {
+    font-size: 16px;
+  }
+
+  .logo2 .paragraph {
+    font-size: 15px;
+    padding: 0 10px;
+  }
+
+  .logo2 .paragraph h1 {
     font-size: 24px;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 480px) {
+  .logo2-img img {
+    width: 200px;
+    height: 200px;
+  }
+
   .content {
-    flex-direction: column;
     gap: 15px;
-    padding: 20px 0;
+  }
+
+  .content a {
+    font-size: 14px;
+  }
+
+  .logo2 .paragraph h1 {
+    font-size: 20px;
   }
 }
