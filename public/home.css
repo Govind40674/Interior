@@ -27,7 +27,7 @@ body {
 }
 
 /* Section Headings */
-.section1 h1,
+.do,
 .sectio-client h1,
 .section-reviews h1 {
   text-align: center;
@@ -38,7 +38,7 @@ body {
   position: relative;
 }
 
-.section1 h1::after,
+.do::after,
 .sectio-client h1::after,
 .section-reviews h1::after {
   content: "";
@@ -54,7 +54,9 @@ body {
 .section1 {
   padding: 20px;
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
+  flex-direction:row;
+  justify-content: center;
   gap: 30px;
   align-items: center;
 }
