@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services</title>
+  <link rel="stylesheet" href="/services.css">
+</head>
+<body>
+    <div id="preloader">
+  <div class="loader">
+    <img src="/images/about us.png" alt="Your Website Logo" />
+    <img src="/images/loading.svg" alt="Loading Animation" />
+  </div>
+</div>
+  <div class="container">
+    <div class="image">
+      <img src="/images/interiorlogo.png" alt="logo">
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <div class="content">
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/services">Services</a>
+    <a href="/contact">Contact</a>
+    <a href="/admin">Admin</a>
+  </div>
+
+  <!-- Heading -->
+  <h1 class="what">What we do</h1>
+
+  <!-- Services Section -->
+  <div class="services">
+    <% for(let data of data1){ %>
+      <div class="box">
+        <img src="<%= data.image %>" alt="service">
+        <h1><%= data.name %></h1>
+        <p><%= data.content %></p>
+        <a href="tel:+917903214246">
+          📞 Call Now
+        </a>
+        <a href="https://wa.me/917903214246" target="_blank">
+          💬 WhatsApp
+        </a>
+      </div>
+    <% } %>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Interior Design. All Rights Reserved.</p>
+  </footer>
+</body>
+<script>
+  // Hide preloader when page fully loads
+  window.addEventListener("load", function() {
+    const preloader = document.getElementById("preloader");
+    preloader.style.display = "none";
+  });
+</script>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Previous-Clients</title>
+  <link rel="stylesheet" href="/prvclients.css">
+</head>
+<body>
+    <div id="preloader">
+  <div class="loader">
+    <img src="/images/about us.png" alt="Your Website Logo" />
+    <img src="/images/loading.svg" alt="Loading Animation" />
+  </div>
+</div>
+  <h1>Previous-Services</h1>
+   <div class="container">
+    <div class="image">
+      <img src="/images/interiorlogo.png" alt="logo">
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <div class="content">
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/services">Services</a>
+    <a href="/contact">Contact</a>
+    <a href="/admin">Admin</a>
+  </div>
+  <%for(let data of data1){%>
+  <div class="services-container">
+    <img src="<%= data.image %>" alt="logo">
+   
+    <a href="/clients-delete/<%= data._id %>">Delete</a>
+
+  </div>
+  <%}%>
+
+
+  
+</body>
+<script>
+  // Hide preloader when page fully loads
+  window.addEventListener("load", function() {
+    const preloader = document.getElementById("preloader");
+    preloader.style.display = "none";
+  });
+</script>
+</html>

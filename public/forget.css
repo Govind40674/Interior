@@ -1,0 +1,79 @@
+/* forget.css */
+
+body {
+  background-color: #121212; /* dark background */
+  color: #ffffff; /* white text for contrast */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  margin-bottom: 30px;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #f0f0f0;
+  width: 100%;
+  text-align: center;
+}
+
+form {
+  background-color: #1f1f1f;
+  padding: 30px 40px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.7);
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+}
+
+label {
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+input[type="text"] {
+  padding: 10px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #333333;
+  color: #eee;
+  outline: none;
+  transition: background-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+  background-color: #444444;
+}
+
+button {
+  margin-top: 25px;
+  padding: 12px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #121212;
+  background-color: #f0a500;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #d18e00;
+}
+
+p {
+  margin-top: 15px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+  color: #ff4c4c; /* red error color */
+}
+

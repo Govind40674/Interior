@@ -1,0 +1,137 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+}
+#preloader {
+  position: fixed;
+  inset: 0;
+  background: rgba(255,255,255,0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+.loader img {
+  max-width: 80px;
+  margin: 0 15px;
+}
+
+/* Page Title */
+h1 {
+  text-align: center;
+  margin: 20px 0 40px;
+  font-size: 32px;
+  color: #222;
+  position: relative;
+}
+
+h1::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 3px;
+  background: linear-gradient(135deg, #43cea2, #185a9d);
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* Logo */
+.container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.container .image img {
+  width: 130px;
+  height: auto;
+}
+
+/* Navigation */
+.content {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.content a {
+  margin: 0 15px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  color: #185a9d;
+  transition: color 0.3s;
+}
+
+.content a:hover {
+  color: #43cea2;
+}
+
+/* Clients Grid */
+.services-container {
+  display: inline-block;
+  background: #fff;
+  border-radius: 12px;
+  padding: 15px;
+  margin: 15px;
+  width: 220px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  vertical-align: top;
+}
+
+.services-container:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Client Image */
+.services-container img {
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  padding: 5px;
+  background: #f1f1f1;
+}
+
+/* Delete Button */
+.services-container a {
+  display: inline-block;
+  padding: 8px 16px;
+  background: linear-gradient(135deg, #e53935, #b71c1c);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+
+.services-container a:hover {
+  background: linear-gradient(135deg, #d32f2f, #9a0007);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .services-container {
+    width: 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-container {
+    width: 100%;
+  }
+}

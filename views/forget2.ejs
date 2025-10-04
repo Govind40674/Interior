@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forget-Otp</title>
+  <link rel="stylesheet" href="/forget2.css">
+</head>
+<body>
+  <h1>Forget password</h1>
+  <form method="POST" action="/forget2-push-check">
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+    <label for="otp">Otp:</label>
+    <input type="text" name="otp" id="otp">
+    <button type="submit">Submit</button>
+    <% if(error){ %>
+      <p style="color: red;"><%= error %></p>
+    <% } %>
+  </form>
+  
+</body>
+</html>

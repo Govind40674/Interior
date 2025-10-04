@@ -1,0 +1,144 @@
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #f0f2f5;
+  color: #333;
+  line-height: 1.5;
+  padding: 30px;
+}
+#preloader {
+  position: fixed;
+  inset: 0;
+  background: rgba(255,255,255,0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+.loader img {
+  max-width: 80px;
+  margin: 0 15px;
+}
+
+/* General Form Style */
+form {
+  background: #fff;
+  padding: 25px 30px;
+  margin: 25px auto;
+  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+form:hover {
+  transform: translateY(-4px);
+}
+
+form h1 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+/* Input fields */
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  font-size: 14px;
+  color: #444;
+}
+
+input[type="text"],
+input[type="file"],
+textarea {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 18px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #43cea2;
+  box-shadow: 0 0 6px rgba(67,206,162,0.3);
+}
+
+textarea {
+  resize: none;
+  min-height: 100px;
+}
+
+/* Buttons */
+button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #43cea2, #185a9d);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #2ecba0, #0f4c75);
+  transform: translateY(-2px);
+}
+
+/* Links inside forms */
+a {
+  display: inline-block;
+  margin-top: 12px;
+  text-align: center;
+  font-size: 14px;
+  color: #185a9d;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #43cea2;
+  text-decoration: underline;
+}
+
+/* Specific form variations */
+.container {
+  border-top: 6px solid #43cea2;
+}
+
+.container2 {
+  border-top: 6px solid #ff9800;
+}
+
+.customer {
+  border-top: 6px solid #764ba2;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  form {
+    padding: 20px;
+    margin: 15px;
+  }
+
+  button {
+    font-size: 14px;
+  }
+}

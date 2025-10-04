@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="/home.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <div id="preloader">
+  <div class="loader">
+    <img src="/images/about us.png" alt="Your Website Logo" />
+    <img src="/images/loading.svg" alt="Loading Animation" />
+  </div>
+</div>
+  <%-include('includes/header');%>
+  <div class="section1">
+    <h1>WHAT WE DO</h1>
+    <%for(let data of data1){%>
+    <div class="container3">
+      <div class="image3">
+        <img src="<%= data.image %>" alt="logo">
+      </div>
+      <div class="content3">
+        <h1><%= data.name %></h1>
+   
+      </div>
+      <div class="link">
+         <a href="tel:+91<%=data.phone%>" 
+   style="display:inline-block; background:green; color:white; padding:10px 20px; text-decoration:none; border-radius:5px;">
+   📞 Call Now
+</a>
+<a href="https://wa.me/917903214246" 
+   target="_blank"
+   style="display:inline-block; background:#25D366; color:white; padding:10px 20px; text-decoration:none; border-radius:5px;">
+   💬 WhatsApp
+</a>
+
+      </div>
+    </div>
+    <%}%>
+
+  </div>
+  <div class="sectio-client">
+    <h1>OUR CLIENTS</h1>
+    <%for(let data of data2){%>
+    <div class="container2">
+      
+        <img src="<%= data.image %>" alt="logo">
+      
+    </div>
+    <%}%>
+  </div>
+  <div class="section-reviews">
+    <h1>CUSTOMER REVIEWS</h1>
+    <%for(let data of data3){%>
+    <div class="container2">
+      
+        <img src="<%= data.image %>" alt="logo">
+        <h1><%= data.name %></h1>
+        <p><%= data.review %></p>
+      
+    </div>
+    <%}%>
+  </div>
+
+  
+</body>
+<%-include('includes/footer');%>
+<script>
+  // Hide preloader when page fully loads
+  window.addEventListener("load", function() {
+    const preloader = document.getElementById("preloader");
+    preloader.style.display = "none";
+  });
+</script>
+</html>

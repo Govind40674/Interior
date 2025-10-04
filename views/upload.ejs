@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upload</title>
+  <link rel="stylesheet" href="/upload.css">
+</head>
+<body>
+    <div id="preloader">
+  <div class="loader">
+    <img src="/images/about us.png" alt="Your Website Logo" />
+    <img src="/images/loading.svg" alt="Loading Animation" />
+  </div>
+</div>
+
+  <form  method="POST" enctype="multipart/form-data" action="/upload" class="container">
+      <h1>Upload Image</h1>
+  <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+
+ 
+   <label for="name">Name:</label>
+   <input type="text" name="name" placeholder="enter name" id="name">
+   <label for="image">Image:</label>
+   <input type="file" name="image"  placeholder="enter image" id="image">
+   <label for="content">Content:</label>
+   <textarea name="content"  placeholder="enter content" id="content"></textarea>
+   
+  <button class="submit" >Submit</button>
+  <a href="/previous-services">Previous Services</a>
+  </form>
+  <form method="POST" enctype="multipart/form-data" action="/upload-client" class="container2">
+    <h1>Upload client</h1>
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+    
+    <label for="client">Client:</label>
+    <input type="file" name="client" id="client">
+    <button type="submit">Submit</button>
+    <a href="/previous-clients">Previous Clients</a>
+  </form>
+  <form method="POST" action="/customer" class="customer" enctype="multipart/form-data">
+    <h1>Customer Review</h1>
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="name" placeholder="enter name">
+      <label for="image">Image:</label>
+   <input type="file" name="image"  placeholder="enter image" id="image">
+    <label for="review">Review:</label>
+    <textarea name="review" id="review" placeholder="enter review"></textarea>
+    
+    <button type="submit">Submit</button>
+    <a href="/previous-reviews">Previous Reviews</a>
+  </form>
+  
+</body>
+<script>
+  // Hide preloader when page fully loads
+  window.addEventListener("load", function() {
+    const preloader = document.getElementById("preloader");
+    preloader.style.display = "none";
+  });
+</script>
+</html>

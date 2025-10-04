@@ -1,0 +1,154 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #f5f7fa;
+  color: #333;
+  line-height: 1.6;
+}
+#preloader {
+  position: fixed;
+  inset: 0;
+  background: rgba(255,255,255,0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+.loader img {
+  max-width: 80px;
+  margin: 0 15px;
+}
+
+/* Container for Logo */
+.container {
+  text-align: center;
+  padding: 20px 0;
+}
+.container img {
+  width: 150px;
+  height: auto;
+}
+
+/* Navigation */
+.content {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  background: #185a9d;
+  padding: 12px 0;
+}
+.content a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s, border-bottom 0.3s;
+}
+.content a:hover {
+  color: #ffd700;
+  border-bottom: 2px solid #ffd700;
+}
+
+/* About Section */
+.about {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.about h1 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: #185a9d;
+}
+.aboutus {
+  flex: 1;
+  font-size: 16px;
+  text-align: justify;
+}
+.about img {
+  max-width: 350px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Clients Section */
+.clients {
+  background: #fff;
+  padding: 40px 20px;
+  text-align: center;
+}
+.clients-header {
+  font-size: 26px;
+  margin-bottom: 20px;
+  color: #185a9d;
+}
+.clients-container {
+  display: inline-block;
+  margin: 15px;
+}
+.clients-container img {
+  width: 120px;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+.clients-container img:hover {
+  transform: scale(1.1);
+}
+
+/* Customers Review Section */
+.customers {
+  background: #f0f4f8;
+  padding: 40px 20px;
+  text-align: center;
+}
+.customers-header {
+  font-size: 26px;
+  margin-bottom: 20px;
+  color: #185a9d;
+}
+.customers-container {
+  background: #fff;
+  margin: 15px auto;
+  padding: 20px;
+  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.customers-container img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  border: 2px solid #185a9d;
+}
+.customers-container h3 {
+  color: #185a9d;
+  margin-bottom: 8px;
+}
+.customers-container p {
+  font-size: 15px;
+  color: #555;
+  text-align: justify;
+  
+}
+
+/* Footer */
+footer {
+  background: #185a9d;
+  color: #fff;
+  text-align: center;
+  padding: 15px 10px;
+  margin-top: 40px;
+  font-size: 14px;
+}

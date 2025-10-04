@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact</title>
+  <link rel="stylesheet" href="/contact.css">
+</head>
+<body>
+    <div class="container">
+    <div class="image">
+      <img src="/images/interiorlogo.png" alt="logo">
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <div class="content">
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/services">Services</a>
+    <a href="/contact">Contact</a>
+    <a href="/admin">Admin</a>
+  </div>
+  <div class="contact">
+    <p class="contact-info">
+      <h1>GET IN TOUCH</h1>
+      Have a question, comment, or just want to say hello? We'd love to hear from you! Feel free to reach out using the form below or contact us directly at info@nsinterior.net or +91 99995 12780. Our team is here to assist you and will get back to you as soon as possible.
+Thank you for reaching out!
+
+E-MAIL:
+info@nsinterior.net
+
+PHONE:
++91 7903214246
+
+ADDRESS:
+A-181, Andheria Mod, MG Road Near Vasantkunj Redlight, Chhatarpur New Delhi - 110074
+    </p>
+    <form method="POST"action="/sendmail" class="mail">
+   <h1>Send Mail</h1>
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+    <label for="to">From:</label>
+    <input type="email" name="from" id="to" placeholder="Enter your email">
+    <label for="subject">Subject:</label>
+    <input type="text" name="subject" id="subject" placeholder="Enter subject">
+    <label for="message">Message:</label>
+    <textarea name="message" id="message" placeholder="Enter message"></textarea>
+    <button type="submit">Send</button>
+  
+    </form>
+
+  </div>
+  
+</body>
+</html>

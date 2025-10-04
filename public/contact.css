@@ -1,0 +1,178 @@
+
+/* Reset and base */
+* {
+  margin: 0; padding: 0; box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #121212;
+  color: #e0e0e0;
+  line-height: 1.6;
+  min-height: 100vh;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Container for logo */
+.container {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.container .image img {
+  width: 160px;
+  border-radius: 50%;
+  border: 3px solid #333;
+  box-shadow: 0 0 15px 2px #444;
+  background: #1e1e1e;
+  transition: transform 0.4s ease;
+}
+
+.container .image img:hover {
+  transform: scale(1.05);
+}
+
+/* Navigation */
+.content {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+}
+
+.content a {
+  text-decoration: none;
+  color: #bbb;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: 1.5px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.content a:hover {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
+}
+
+/* Contact section */
+.contact {
+  max-width: 700px;
+  width: 100%;
+  background-color: #1c1c1c;
+  border-radius: 15px;
+  padding: 30px 25px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.7);
+}
+
+/* Contact info styling */
+.contact-info {
+  margin-bottom: 40px;
+  font-size: 1.1rem;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.contact-info h1 {
+  color: #f0f0f0;
+  margin-bottom: 15px;
+  font-weight: 700;
+  font-size: 2.2rem;
+}
+
+/* Links inside contact info */
+.contact-info a {
+  color: #66aaff;
+  text-decoration: underline;
+  word-break: break-word;
+  transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+  color: #99caff;
+}
+
+/* Form styling */
+.mail {
+  display: flex;
+  flex-direction: column;
+}
+
+.mail h1 {
+  color: #f0f0f0;
+  margin-bottom: 20px;
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.mail label {
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #ddd;
+}
+
+.mail input[type="email"],
+.mail input[type="text"],
+.mail textarea {
+  background-color: #292929;
+  border: 1.5px solid #444;
+  border-radius: 8px;
+  color: #eee;
+  padding: 12px 15px;
+  margin-bottom: 25px;
+  font-size: 1rem;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+}
+
+.mail input[type="email"]:focus,
+.mail input[type="text"]:focus,
+.mail textarea:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 8px #007bff;
+}
+
+.mail textarea {
+  min-height: 120px;
+}
+
+.mail button {
+  background-color: #007bff;
+  border: none;
+  border-radius: 30px;
+  padding: 14px 0;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0,123,255,0.5);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+}
+
+.mail button:hover {
+  background-color: #0056b3;
+  box-shadow: 0 8px 28px rgba(0,86,179,0.6);
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .container .image img {
+    width: 180px;
+  }
+
+  .content {
+    gap: 40px;
+  }
+
+  .contact {
+    padding: 40px 35px;
+  }
+}
