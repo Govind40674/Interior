@@ -464,7 +464,7 @@ app.get("/previous-reviews", async (req, res) => {
  
   }
   const data1 = await customer.find();
-  res.render("prvreviews", { data1 });
+  res.render("prvcustomer", { data1 });
 })
 app.get("/services-delete/:id", async (req, res) => {
     if(!req.cookies.username){

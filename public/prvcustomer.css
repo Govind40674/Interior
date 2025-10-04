@@ -1,4 +1,4 @@
-/* Reset */
+/* ================== GLOBAL RESET ================== */
 * {
   margin: 0;
   padding: 0;
@@ -7,138 +7,151 @@
 }
 
 body {
-  background: #f8f9fa;
+  background: #f9f9f9;
   color: #333;
   line-height: 1.6;
-  padding: 20px;
+  text-align: center;
 }
+
+/* ================== PRELOADER ================== */
 #preloader {
   position: fixed;
-  inset: 0;
-  background: rgba(255,255,255,0.95);
+  width: 100%;
+  height: 100%;
+  background: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 10000;
+  z-index: 1000;
 }
 
-.loader img {
-  max-width: 80px;
-  margin: 0 15px;
+#preloader .loader img {
+  max-width: 100px;
+  margin: 10px;
 }
 
-/* Page Title */
+/* ================== HEADER ================== */
 h1 {
-  text-align: center;
-  margin: 20px 0 40px;
-  font-size: 32px;
-  color: #222;
-  position: relative;
+  font-size: 2.2rem;
+  margin: 20px 0;
+  color: #444;
 }
 
-h1::after {
-  content: "";
-  display: block;
-  width: 80px;
-  height: 3px;
-  background: linear-gradient(135deg, #43cea2, #185a9d);
-  margin: 10px auto 0;
-  border-radius: 2px;
-}
-
-/* Logo */
-.container {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.container .image img {
-  width: 130px;
-  height: auto;
-}
-
-/* Navigation */
+/* ================== NAVIGATION ================== */
 .content {
-  text-align: center;
-  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 20px 0;
 }
 
 .content a {
-  margin: 0 15px;
   text-decoration: none;
-  font-size: 15px;
+  color: #444;
   font-weight: 500;
-  color: #185a9d;
-  transition: color 0.3s;
+  padding: 8px 14px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
 }
 
 .content a:hover {
-  color: #43cea2;
+  background: #333;
+  color: #fff;
 }
 
-/* Review Card */
+/* ================== LOGO ================== */
+.container .image img {
+  max-width: 120px;
+  margin: 15px auto;
+  display: block;
+}
+
+/* ================== SERVICES CARD ================== */
 .services-container {
+  max-width: 500px;
   background: #fff;
-  border-radius: 12px;
-  padding: 20px;
   margin: 20px auto;
-  max-width: 600px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
 }
 
 .services-container:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 22px rgba(0,0,0,0.15);
 }
 
-/* Customer Image */
 .services-container img {
-  width: 80px;
-  height: 80px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin-bottom: 15px;
-  border: 3px solid #43cea2;
+  max-width: 100%;
+  border-radius: 8px;
 }
 
-/* Customer Name */
 .services-container h3 {
-  font-size: 18px;
-  font-weight: 600;
-  color: #185a9d;
-  margin-bottom: 10px;
+  margin: 15px 0 10px;
+  font-size: 1.5rem;
+  color: #333;
 }
 
-/* Review Text */
 .services-container p {
-  font-size: 15px;
-  color: #555;
-  margin-bottom: 20px;
-  font-style: italic;
-  line-height: 1.5;
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 15px;
 }
 
 /* Delete Button */
 .services-container a {
   display: inline-block;
   padding: 8px 16px;
-  background: linear-gradient(135deg, #e53935, #b71c1c);
+  background: crimson;
   color: #fff;
-  font-size: 14px;
-  font-weight: 500;
+  border-radius: 5px;
   text-decoration: none;
-  border-radius: 6px;
-  transition: background 0.3s;
+  transition: 0.3s ease;
 }
 
 .services-container a:hover {
-  background: linear-gradient(135deg, #d32f2f, #9a0007);
+  background: darkred;
 }
 
-/* Responsive */
+/* ================== RESPONSIVENESS ================== */
+
+/* Tablets */
 @media (max-width: 768px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+
   .services-container {
     max-width: 90%;
+  }
+
+  .content {
+    gap: 10px;
+  }
+}
+
+/* Mobile Phones */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .services-container {
+    padding: 15px;
+  }
+
+  .services-container h3 {
+    font-size: 1.2rem;
+  }
+
+  .services-container p {
+    font-size: 0.9rem;
+  }
+
+  .content a {
+    font-size: 0.9rem;
+    padding: 6px 10px;
   }
 }
