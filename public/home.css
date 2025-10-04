@@ -51,14 +51,15 @@ body {
 }
 
 /* WHAT WE DO Section */
-.section1 {
+/* .section1 {
   padding: 20px;
   display: flex;
-  /* flex-direction: column; */
+  
   flex-direction:row;
   justify-content: center;
   gap: 30px;
   align-items: center;
+  
 }
 
 .container3 {
@@ -75,7 +76,32 @@ body {
 .container3:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 22px rgba(0,0,0,0.15);
+} */
+ .section1 {
+  padding: 20px;
+  display: flex;
+  flex-direction: row;       /* row layout */
+  justify-content: center;   /* center horizontally */
+  align-items: flex-start;   /* align items from top */
+  flex-wrap: wrap;           /* allow wrapping to new line */
+  gap: 30px;                 /* space between cards */
 }
+
+.container3 {
+  background: #fff;
+  border-radius: 12px;
+  padding: 25px;
+  width: 300px;              /* fixed width for consistent cards */
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.container3:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.15);
+}
+
 
 .image3 img {
   max-width: 100%;
