@@ -164,18 +164,12 @@ app.post("/upload", upload.single("image"),csrfProtection, async (req, res) => {
   res.redirect("/");
 });
 app.get("/forget",csrfProtection, async (req, res) => {
-    if(!req.cookies.username){
-  return res.render("login",{error:"please login first",csrfToken: req.csrfToken()});
- 
-  }
+  
   const error=req.query.error;
   res.render("forget",{csrfToken: req.csrfToken(),error});
 });
 app.post("/forget-push",csrfProtection, async (req, res) => {
-   if(!req.cookies.username){
-  return res.render("login",{error:"please login first",csrfToken: req.csrfToken()});
  
-  }
   const { email } = req.body;
 
   const user = await login.findOne({email:email });
@@ -211,10 +205,7 @@ app.post("/forget-push",csrfProtection, async (req, res) => {
 }
 });
 app.post("/forget2-push-check",csrfProtection, async (req, res) => {
-    if(!req.cookies.username){
-  return res.render("login",{error:"please login first",csrfToken: req.csrfToken()});
  
-  }
   const { otp } = req.body;
   if(otp==req.cookies.otp){
     let user=await login.findOne({email:req.session.email});
@@ -223,17 +214,16 @@ app.post("/forget2-push-check",csrfProtection, async (req, res) => {
       {
         maxAge:10*60*1000
       });
+      res.clearCookie("otp");
+      
    
-    res.render("setpassword",{csrfToken: req.csrfToken(),error:null,username:user.username});
+    res.render("setpassword",{csrfToken: req.csrfToken(),error:"please set password",username:user.username});
   }else{
     res.render("forget2",{error:"Invalid OTP",csrfToken: req.csrfToken()});
   }
 });
 app.post("/setpassword-push",csrfProtection, async (req, res) => {
-   if(!req.cookies.username){
-  return res.render("login",{error:"please login first",csrfToken: req.csrfToken()});
  
-  }
   const { username,password } = req.body;
   if(!password){
     return res.render("setpassword",{csrfToken: req.csrfToken(),error:"enter password",username:user.username});
@@ -247,19 +237,21 @@ app.post("/setpassword-push",csrfProtection, async (req, res) => {
     email: req.cookies.email
   });
   await user.save();
+  res.clearCookie("user");
+  res.clearCookie("email");
 res.render("login",{error:null,csrfToken: req.csrfToken()});
  }else{
 
 await login.updateOne({email:req.session.email,username:req.session.user},{$set:{password:password}});
+ res.clearCookie("user");
+  res.clearCookie("email");
 res.render("login",{error:null,csrfToken: req.csrfToken()});
 
 
 
  }
 });
-// app.get("/upload-client", csrfProtection,async (req, res) => {
-//   res.render("upload-client", { csrfToken: req.csrfToken() });
-// });
+
 app.post("/upload-client", upload.single("client"),csrfProtection, async (req, res) => {
    if(!req.cookies.username){
   return res.render("login",{error:"please login first",csrfToken: req.csrfToken()});
@@ -335,7 +327,26 @@ app.get("/reviews-delete/:id", async (req, res) => {
   await customer.deleteOne({ _id: id });
   res.redirect("/previous-reviews");
   
+});
+app.get("/:", async (req, res) => {
+  res.render("error",{error:"page not found"});
 })
+app.get("/:/:", async (req, res) => {
+  res.render("error",{error:"page not found"});
+})
+app.get("/:/:/:", async (req, res) => {
+  res.render("error",{error:"page not found"});
+})
+app.get("/:/:/:/:", async (req, res) => {
+  res.render("error",{error:"page not found"});
+})
+app.get("/:/:/:/:/:", async (req, res) => {
+  res.render("error",{error:"page not found"});
+})
+app.get("/:/:/:/:/:/:", async (req, res) => {
+  res.render("error",{error:"page not found"});
+})
+
 
 
 // ------------------ Server ------------------

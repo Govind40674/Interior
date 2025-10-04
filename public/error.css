@@ -1,0 +1,110 @@
+/* error.css: clean, accessible error page styling */
+
+/* Reset-ish */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html,body { height: 100%; }
+
+body {
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg, #f7fafc 0%, #eef2f7 100%);
+  color: #1f2937;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+}
+
+/* Card */
+.error-card {
+  width: 100%;
+  max-width: 820px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  padding: 32px;
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 24px;
+  align-items: center;
+}
+
+/* Icon column */
+.error-icon {
+  width: 96px;
+  height: 96px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 44px;
+  color: #8b2e2e;
+  box-shadow: inset 0 -6px 12px rgba(255,255,255,0.4);
+}
+
+/* Content */
+.error-content h1 {
+  font-size: 28px;
+  color: #111827;
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+
+.error-content p.message {
+  font-size: 15px;
+  color: #374151;
+  margin-bottom: 18px;
+  line-height: 1.55;
+  text-align: left;
+}
+
+/* Small details / actions */
+.error-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+
+/* Primary button: go home */
+.btn-primary {
+  background: linear-gradient(90deg,#2dd4bf,#0ea5e9);
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(14,165,233,0.14);
+}
+.btn-primary:hover { transform: translateY(-3px); }
+
+/* Secondary: contact/support */
+.btn-secondary {
+  background: transparent;
+  color: #0f172a;
+  border: 1px solid #e6eef6;
+}
+.btn-secondary:hover { background: #f8fafc; transform: translateY(-2px); }
+
+/* small meta text */
+.meta {
+  margin-top: 14px;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* Mobile: stack */
+@media (max-width: 640px) {
+  .error-card { grid-template-columns: 1fr; text-align: center; padding: 22px; gap: 16px; }
+  .error-icon { margin: 0 auto; }
+  .error-content p.message { text-align: center; }
+  .error-actions { justify-content: center; }
+}
