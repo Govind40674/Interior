@@ -220,6 +220,106 @@ app.post(
     }
   }
 );
+app.post(
+  "/upload-client",
+  upload.single("image"),  // ✅ first multer parses file & body
+  csrfProtection,          // ✅ then CSRF protection runs
+  async (req, res) => {
+    try {
+      // 🔴 Not logged in
+      if (!req.cookies.username) {
+        return res.render("login", { 
+          error: "Please login first", 
+          csrfToken: req.csrfToken() 
+        });
+      }
+
+      // 🔴 No file uploaded
+      if (!req.file) {
+        return res.render("upload", { 
+          error1: "No file uploaded!", 
+          error2: null,
+          error3: null,
+          csrfToken: req.csrfToken()
+        });
+      }
+
+      // 🔴 Check file type
+      const allowedTypes = ["image/jpeg", "image/png", "image/webp", "image/jpg"];
+      if (!allowedTypes.includes(req.file.mimetype)) {
+        return res.render("upload", { 
+          error2: "Only JPG, PNG, and WEBP files are allowed.", 
+          error1: null,
+          error3: null,
+          csrfToken: req.csrfToken()
+        });
+      }
+
+      // ✅ Save data
+      const data1 = new client({
+       
+        image: req.file.path, // cloudinary/multer gives the path/url
+     
+      });
+
+      await data1.save();
+      res.redirect("/");
+
+    } catch (err) {
+      res.render("error", { error: "Something went wrong while saving data." });
+    }
+  }
+);
+app.post(
+  "/customer",
+  upload.single("image"),  // ✅ first multer parses file & body
+  csrfProtection,          // ✅ then CSRF protection runs
+  async (req, res) => {
+    try {
+      // 🔴 Not logged in
+      if (!req.cookies.username) {
+        return res.render("login", { 
+          error: "Please login first", 
+          csrfToken: req.csrfToken() 
+        });
+      }
+
+      // 🔴 No file uploaded
+      if (!req.file) {
+        return res.render("upload", { 
+          error1: "No file uploaded!", 
+          error2: null,
+          error3: null,
+          csrfToken: req.csrfToken()
+        });
+      }
+
+      // 🔴 Check file type
+      const allowedTypes = ["image/jpeg", "image/png", "image/webp", "image/jpg"];
+      if (!allowedTypes.includes(req.file.mimetype)) {
+        return res.render("upload", { 
+          error3: "Only JPG, PNG, and WEBP files are allowed.", 
+          error2: null,
+          error1: null,
+          csrfToken: req.csrfToken()
+        });
+      }
+
+      // ✅ Save data
+      const data1 = new customer({
+        name: req.body.name,
+        image: req.file.path, // cloudinary/multer gives the path/url
+        review: req.body.review,
+      });
+
+      await data1.save();
+      res.redirect("/");
+
+    } catch (err) {
+      res.render("error", { error: "Something went wrong while saving data." });
+    }
+  }
+);
 
 
 
@@ -323,54 +423,7 @@ res.render("login",{error:null,csrfToken: req.csrfToken()});
 //   await data1.save();
 //   res.redirect("/");
 // });
-app.post(
-  "/upload-client",
-  upload.single("image"),   // ✅ multer first
-  csrfProtection,           // ✅ then CSRF check
-  async (req, res) => {
-    try {
-      // 🔴 Not logged in
-      if (!req.cookies.username) {
-        return res.render("login", { 
-          error: "Please login first", 
-          csrfToken: req.csrfToken() 
-        });
-      }
 
-      // 🔴 No file uploaded
-      if (!req.file) {
-        return res.render("upload", { 
-          error2: "No file uploaded!", 
-          error1: null,
-          error3: null,
-          csrfToken: req.csrfToken() 
-        });
-      }
-
-      // 🔴 Invalid file type
-      const allowedTypes = ["image/jpeg", "image/png", "image/webp", "image/jpg"];
-      if (!allowedTypes.includes(req.file.mimetype)) {
-        return res.render("upload", { 
-          error2: "Only JPG, PNG, and WEBP files are allowed.", 
-          error1: null,
-          error3: null,
-          csrfToken: req.csrfToken() 
-        });
-      }
-
-      // ✅ Save client image
-      const data1 = new client({
-        image: req.file.path,  // Cloudinary gives URL here
-      });
-
-      await data1.save();
-      res.redirect("/");
-
-    } catch (err) {
-      res.render("error", { error: "Something went wrong while saving data." });
-    }
-  }
-);
 
 
 // app.post("/customer", upload.single("image"),csrfProtection, async (req, res) => {
@@ -386,56 +439,7 @@ app.post(
 //   await data1.save();
 //   res.redirect("/admin");
 // });
-app.post(
-  "/customer",
-  upload.single("image"),   // ✅ multer runs first
-  csrfProtection,           // ✅ then csrf
-  async (req, res) => {
-    try {
-      // 🔴 Not logged in
-      if (!req.cookies.username) {
-        return res.render("login", { 
-          error: "Please login first", 
-          csrfToken: req.csrfToken() 
-        });
-      }
 
-      // 🔴 No file uploaded
-      if (!req.file) {
-        return res.render("upload", { 
-          error3: "No file uploaded!", 
-          error1: null,
-          error2: null,
-          csrfToken: req.csrfToken() 
-        });
-      }
-
-      // 🔴 Invalid file type
-      const allowedTypes = ["image/jpeg", "image/png", "image/webp", "image/jpg"];
-      if (!allowedTypes.includes(req.file.mimetype)) {
-        return res.render("upload", { 
-          error3: "Only JPG, PNG, and WEBP files are allowed.", 
-          error1: null,
-          error2: null,
-          csrfToken: req.csrfToken() 
-        });
-      }
-
-      // ✅ Save customer review
-      const data1 = new customer({
-        name: req.body.name,
-        image: req.file.path, // Cloudinary provides URL
-        review: req.body.review,
-      });
-
-      await data1.save();
-      res.redirect("/");
-
-    } catch (err) {
-      res.render("error", { error: "Something went wrong while saving data." });
-    }
-  }
-);
 
 
 app.get("/previous-services", async (req, res) => {

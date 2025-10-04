@@ -17,9 +17,23 @@ const storage = new CloudinaryStorage({
     allowed_formats: ["jpg", "png", "jpeg", "webp"],
   },
 });
+const allowedTypes = ["image/jpeg", "image/png", "image/webp", "image/jpg"];
 
-const upload = multer({ storage });
+function fileFilter(req, file, cb) {
+  if (allowedTypes.includes(file.mimetype)) {
+    cb(null, true);
+  } else {
+    cb(new Error("Only JPG, PNG, and WEBP files are allowed."), false);
+  }
+}
+
+// 🔹 Final Upload Middleware
+const upload = multer({ storage, fileFilter });
 
 module.exports = upload;
 
-module.exports = upload;
+// const upload = multer({ storage });
+
+// module.exports = upload;
+
+

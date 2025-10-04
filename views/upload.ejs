@@ -37,8 +37,8 @@
     <input type="hidden" name="_csrf" value="<%= csrfToken %>">
     
     <label for="client">Client:</label>
-    <input type="file" name="client" id="client">
-    <button type="submit">Submit</button>
+    <input type="file" name="image" id="client">
+    <button >Submit</button>
       <% if(error2){ %>
   <p class="error" style="color: red;"><%= error2 %></p>
   <% } %>
@@ -50,11 +50,11 @@
     <label for="name">Name:</label>
     <input type="text" name="name" id="name" placeholder="enter name">
       <label for="image">Image:</label>
-   <input type="file" name="image"  placeholder="enter image" id="image">
+   <input type="file" name="image" id="image">
     <label for="review">Review:</label>
     <textarea name="review" id="review" placeholder="enter review"></textarea>
     
-    <button type="submit">Submit</button>
+    <button>Submit</button>
       <% if(error3){ %>
   <p class="error" style="color: red;"><%= error3 %></p>
   <% } %>
