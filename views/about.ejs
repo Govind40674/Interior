@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About</title>
+  <!-- <title>About</title> -->
+     <title>MW Studio || About</title>
+  <link rel="icon" href="/images/title.png" type="image/png" />
   <link rel="stylesheet" href="/about.css">
 </head>
 <body>
@@ -27,28 +29,30 @@
     <a href="/admin">Admin</a>
   </div>
   <div class="about">
-    <p class="aboutus">
+    <!-- <p class="aboutus"> -->
       <h1>About Us Interior</h1>
    MW Studio is one of the professional engineering services companies founded in 2019 in Delhi and with presence across India. We successfully established ourselves as a dynamic industry that supplies greener and innovative solutions according to client requests and on demand. Responsiveness, flexibility, and quality are our hallmarks, and clients expect or deserve them. MW Studio is the Interior Contracting business in Faridabad, Delhi NCR, Gurgaon, and Noida that offers the supply of specialized services with all the features – for a reasonable price and at a fraction of the time required by others.
 
 The mission of our organization is to always offer effective solutions to our clients for each engineering conundrum. Maintaining integrity in our solutions is our standard goal. We ensure quality when providing drawings and documents according to agreed deadlines. MW Studio provides the very best solutions for our customers. We bring all our products and capabilities under one roof, so we can guarantee quality service and provide sustainable solutions. We are remarkable because of our many years of expertise within the niche.
-    </p>
+    <!-- </p> -->
     <img src="/images/about us.png" alt="logo">
 
   </div>
+    <h1 class="clients-header">Clients</h1>
 <div class="clients">
 
 
-  <h1 class="clients-header">Clients</h1>
+
   <%for(let data of data1){%>
   <div class="clients-container">
     <img src="<%= data.image %>" alt="logo">
   </div>
   <%}%>
 </div>
+ <h1 class="customers-header">Customers Review</h1>
 <div class="customers">
 
-  <h1 class="customers-header">Customers Review</h1>
+ 
   <%for(let data of data2){%>
   <div class="customers-container">
     <img src="<%= data.image %>" alt="logo">

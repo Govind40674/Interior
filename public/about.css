@@ -1,26 +1,25 @@
-
-/* Reset */
+/* Reset and Box sizing */
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  font-family: "Poppins", sans-serif;
-  background: #f8f8f8;
-  color: #333;
-  line-height: 1.7;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ffffff;
+  color: #222222;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
-/* ===== Preloader ===== */
+/* Preloader styles */
 #preloader {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: #fff;
+  background-color: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,225 +27,287 @@ body {
 }
 
 .loader img {
-  height: 100px;
-  margin: 0 10px;
+  width: 100px;
+  height: auto;
 }
 
-/* ===== Logo (Top Center) ===== */
+/* Container and Logo */
 .container {
+  max-width: 1140px;
+  margin: 40px auto 30px auto;
+  padding: 0 20px;
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 20px 0;
 }
 
-.container .image img {
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 50%;
+.image img {
+  width: 160px;
+  height: auto;
+  filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.12));
+  transition: transform 0.3s ease;
 }
 
-/* ===== Navigation ===== */
+.image img:hover {
+  transform: scale(1.05);
+}
+
+/* Navigation Links */
 .content {
+  max-width: 1140px;
+  margin: 20px auto 50px auto;
+  padding: 15px 30px;
   display: flex;
   justify-content: center;
-  gap: 40px;
-  padding: 15px 0;
-  background: #222;
+  gap: 24px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.07);
+  flex-wrap: wrap;
 }
 
 .content a {
+  color: #00539c;
+  font-weight: 700;
   text-decoration: none;
-  color: orange;
-  font-size: 18px;
-  font-weight: 500;
-  transition: color 0.3s ease;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border: 2px solid transparent;
 }
 
-.content a:hover {
-  color: #00aaff;
+.content a:hover, .content a:focus {
+  background-color: #00539c;
+  color: #fff;
+  border-color: #004080;
+  outline: none;
 }
 
-/* ===== About Section ===== */
+/* About Section */
 .about {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-  padding: 60px 10%;
-  flex-wrap: wrap;
-  background: #fff;
+  max-width: 900px;
+  margin: 0 auto 60px auto;
+  background-color: #ffffff;
+  padding: 40px 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 28px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  color: #323232;
 }
 
-.aboutus {
-  max-width: 700px;
-  font-size: 16px;
-  color: #444;
+.about h1 {
+  font-size: 2.6rem;
+  color: #003366;
+  margin-bottom: 24px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-.aboutus h1 {
-  font-size: 36px;
-  margin-bottom: 20px;
-  color: #222;
-  font-weight: 600;
+.about p {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  margin-bottom: 25px;
+  text-align: justify;
+  color: #454545;
+  font-weight: 500;
+  max-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .about img {
-  width: 350px;
-  height: 350px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 5px solid #eee;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  max-width: 420px;
+  height: auto;
+  margin: 20px auto 0 auto;
+  border-radius: 14px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  display: block;
 }
 
-/* ===== Clients Section ===== */
+/* Clients Section */
 .clients {
-  text-align: center;
-  padding: 50px 10%;
-  background: #fafafa;
+  max-width: 900px;
+  margin: 0 auto 50px auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
 }
 
 .clients-header {
-  font-size: 32px;
-  margin-bottom: 30px;
-  color: #222;
+  text-align: center;
+  font-weight: 900;
+  font-size: 2rem;
+  color: #003366;
+  margin-bottom: 35px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
 .clients-container {
-  display: inline-block;
-  margin: 15px;
+  flex: 1 1 140px;
+  max-width: 140px;
+  min-width: 140px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
 }
 
 .clients-container img {
-  width: 150px;
-  height: 150px;
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
   object-fit: contain;
-  border: 3px solid #eee;
-  padding: 10px;
-  border-radius: 12px;
-  background: #fff;
 }
 
-/* ===== Customers Review ===== */
+.clients-container:hover {
+  transform: scale(1.1);
+}
+
+/* Customers Section */
 .customers {
-  padding: 60px 10%;
-  text-align: center;
-  background: #fff;
+  max-width: 900px;
+  margin: 0 auto 50px auto;
+  padding: 0 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
 }
 
 .customers-header {
-  font-size: 32px;
-  margin-bottom: 30px;
-  color: #222;
+  text-align: center;
+  font-weight: 900;
+  font-size: 2rem;
+  color: #003366;
+  margin-bottom: 35px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
 .customers-container {
-  margin-bottom: 30px;
+  flex: 1 1 280px;
+  max-width: 280px;
+  min-width: 280px;
+  background-color: #f4f7fb;
+  border-radius: 15px;
   padding: 20px;
-  border-radius: 12px;
-  background: #fafafa;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.06);
+  text-align: center;
+  transition: box-shadow 0.3s ease;
+}
+
+.customers-container:hover {
+  box-shadow: 0 4px 28px rgba(0, 0, 0, 0.11);
 }
 
 .customers-container img {
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  border: 3px solid #00539c;
 }
 
 .customers-container h3 {
-  font-size: 20px;
-  color: #333;
-  margin-bottom: 8px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #002a55;
+  margin-bottom: 10px;
 }
 
 .customers-container p {
-  font-size: 15px;
-  color: #555;
-  max-width: 600px;
-  margin: 0 auto;
-  line-height: 1.6;
+  font-style: italic;
+  color: #666;
+  font-size: 1rem;
+  line-height: 1.45;
+  font-weight: 500;
+  margin: 0 10px;
 }
 
-/* ===== Footer ===== */
+/* Footer */
 footer {
-  background: #222;
-  color: #fff;
+  background-color: #003366;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 18px 20px;
   text-align: center;
-  padding: 15px;
-  font-size: 14px;
+  border-radius: 0 0 15px 15px;
+  margin-top: 50px;
 }
 
-/* ===== Responsive Design ===== */
+/* Responsive Media Queries */
 @media (max-width: 1024px) {
-  .about {
-    flex-direction: column;
-    text-align: center;
+  .container {
+    padding: 0 15px;
   }
 
-  .about img {
-    width: 280px;
-    height: 280px;
-  }
-
-  .aboutus h1 {
-    font-size: 28px;
-  }
-}
-
-@media (max-width: 768px) {
   .content {
-    flex-wrap: wrap;
-    gap: 20px;
+    margin: 20px auto 40px auto;
+    padding: 12px 20px;
   }
 
-  .content a {
-    font-size: 16px;
+  .about {
+    padding: 35px 25px;
   }
 
-  .aboutus {
-    font-size: 15px;
-  }
-
-  .clients-container img {
-    width: 120px;
-    height: 120px;
+  .clients-container {
+    flex: 1 1 120px;
+    max-width: 120px;
   }
 
   .customers-container {
-    padding: 15px;
-  }
-
-  .customers-container p {
-    font-size: 14px;
+    max-width: 45%;
+    flex: 1 1 45%;
+    padding: 20px 14px;
   }
 }
 
 @media (max-width: 480px) {
-  .container .image img {
-    width: 90px;
-    height: 90px;
+  .content {
+    gap: 12px;
   }
 
   .content a {
-    font-size: 14px;
+    font-size: 0.95rem;
+    padding: 12px 16px;
   }
 
-  .about img {
-    width: 200px;
-    height: 200px;
+  .about h1 {
+    font-size: 2rem;
   }
 
-  .aboutus h1 {
-    font-size: 22px;
+  .about p {
+    font-size: 1rem;
   }
 
-  .clients-header,
-  .customers-header {
-    font-size: 24px;
+  .clients-container {
+    flex: 1 1 100%;
+    max-width: 100%;
+    margin: 0 auto 20px auto;
+  }
+
+  .customers-container {
+    max-width: 100%;
+    flex: 1 1 100%;
+  }
+
+  .customers-container h3 {
+    font-size: 1.2rem;
+  }
+
+  .customers-container p {
+    font-size: 0.9rem;
+  }
+
+  .loader img {
+    width: 90px;
   }
 }
+
+
