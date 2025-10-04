@@ -132,7 +132,7 @@ app.post("/login-push", csrfProtection,async (req, res) => {
     // req.session.username=username;
     res.cookie("username",username,
       {
-        maxAge:60*1000
+        maxAge:24*60*60*1000
       });
 
     res.redirect("/admin");
@@ -155,21 +155,6 @@ app.get("/admin", csrfProtection,async (req, res) => {
 
 
 
-// ✅ POST form (validate token)
-// app.post("/upload", upload.single("image"),csrfProtection, async (req, res) => {
-//   if(!req.cookies.username){
-//   return res.render("login",{error:"please login first",csrfToken: req.csrfToken()});
- 
-//   }
-
-//   const data1 = new data({
-//     name: req.body.name,
-//     image: req.file.path,
-//     content: req.body.content
-//   });
-//   await data1.save();
-//   res.redirect("/");
-// });
 app.post(
   "/upload",
   upload.single("image"),  // ✅ first multer parses file & body
@@ -412,33 +397,7 @@ res.render("login",{error:null,csrfToken: req.csrfToken()});
  }
 });
 
-// app.post("/upload-client", upload.single("client"),csrfProtection, async (req, res) => {
-//    if(!req.cookies.username){
-//   return res.render("login",{error:"please login first",csrfToken: req.csrfToken()});
- 
-//   }
-//   const data1 = new client({
-//     image: req.file.path,
-//   });
-//   await data1.save();
-//   res.redirect("/");
-// });
 
-
-
-// app.post("/customer", upload.single("image"),csrfProtection, async (req, res) => {
-//     if(!req.cookies.username){
-//   return res.render("login",{error:"please login first",csrfToken: req.csrfToken()});
- 
-//   }
-//   const data1 = new customer({
-//     name: req.body.name,
-//     image: req.file.path,
-//     review: req.body.review
-//   });
-//   await data1.save();
-//   res.redirect("/admin");
-// });
 
 
 

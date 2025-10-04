@@ -23,8 +23,9 @@ body {
 }
 
 .container .image img {
-  max-width: 160px;
-  height: auto;
+  max-width:160px;
+  height:auto;
+  border-radius:5%;
 }
 
 /* Navigation */
