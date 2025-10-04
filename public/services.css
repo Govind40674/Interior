@@ -1,4 +1,7 @@
-/* Reset & Global Styles */
+
+
+
+/* ===== Reset ===== */
 * {
   margin: 0;
   padding: 0;
@@ -6,14 +9,13 @@
   font-family: "Poppins", sans-serif;
 }
 
-html, body {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  background: #f5f7fa;
+body {
+  background: #f9f9f9;
   color: #333;
   line-height: 1.6;
 }
+
+/* ===== Preloader ===== */
 #preloader {
   position: fixed;
   inset: 0;
@@ -29,166 +31,191 @@ html, body {
   margin: 0 15px;
 }
 
-/* Logo */
+/* ===== Top Logo ===== */
 .container {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 20px 0;
 }
-.container img {
-  width: 250px;
+
+.container .image img {
+  /* width: 180px;
   height: auto;
-  border-radius:50%;
+  object-fit: contain; */
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
-/* Navigation */
+/* ===== Navigation ===== */
 .content {
   display: flex;
   justify-content: center;
+  gap: 30px;
+  padding: 15px 0;
+  background: #222;
   flex-wrap: wrap;
-  gap: 25px;
-  background: #185a9d;
-  padding: 12px 0;
-}
-.content a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s, border-bottom 0.3s;
-}
-.content a:hover {
-  color: #ffd700;
-  border-bottom: 2px solid #ffd700;
 }
 
-/* Heading */
+.content a {
+  text-decoration: none;
+  color: orange;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.content a:hover {
+  color: #00aaff;
+}
+
+/* ===== Page Heading ===== */
 .what {
   text-align: center;
-  margin: 30px 0;
   font-size: 32px;
+  margin: 40px 0 30px;
   color: #185a9d;
-  font-weight: 700;
+  letter-spacing: 1px;
+  position: relative;
 }
 
-/* Services Section */
+.what::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(135deg, #43cea2, #185a9d);
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* ===== Services Section ===== */
 .services {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-  padding: 20px 40px;
-  max-width: 1200px;
-  margin: 0 auto;
-  flex: 1; /* pushes footer down */
+  display: flex;
+  flex-wrap: wrap;              /* allow wrapping */
+  justify-content: center;
+  gap: 30px;
+  padding: 40px 20px;
 }
 
-.box {
+/* Service Box */
+.services .box {
   background: #fff;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
   padding: 20px;
+  width: 300px;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
-.box:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+
+.services .box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
-.box img {
+
+/* Service Image */
+.services .box img {
   width: 100%;
-  max-width: 300px;
   height: 180px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 8px;
   margin-bottom: 15px;
 }
-.box h1 {
-  font-size: 20px;
-  margin-bottom: 10px;
+
+/* Title */
+.services .box h1 {
+  font-size: 22px;
   color: #185a9d;
+  margin-bottom: 10px;
 }
-.box p {
-  font-size: 15px;
-  margin-bottom: 15px;
-  text-align: justify;
+
+/* Description */
+.services .box p {
+  font-size: 14px;
   color: #555;
+  margin-bottom: 15px;
+  line-height: 1.5;
 }
 
 /* Buttons */
-.box a {
+.services .box a {
   display: inline-block;
   margin: 5px;
-  padding: 10px 18px;
-  border-radius: 6px;
-  text-decoration: none;
+  padding: 10px 20px;
   font-size: 14px;
   font-weight: 500;
-  transition: background 0.3s ease, transform 0.2s ease;
-}
-.box a:first-of-type {
-  background: #28a745;
+  text-decoration: none;
+  border-radius: 6px;
   color: #fff;
-}
-.box a:first-of-type:hover {
-  background: #218838;
-  transform: scale(1.05);
-}
-.box a:last-of-type {
-  background: #25D366;
-  color: #fff;
-}
-.box a:last-of-type:hover {
-  background: #1da851;
-  transform: scale(1.05);
+  transition: transform 0.2s, opacity 0.3s;
 }
 
-/* Footer (Sticky) */
+.services .box a:first-of-type {
+  background: green;   /* Call button */
+}
+
+.services .box a:last-of-type {
+  background: #25D366; /* WhatsApp button */
+}
+
+.services .box a:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* ===== Footer ===== */
 footer {
-  background: #185a9d;
-  color: #fff;
   text-align: center;
-  padding: 15px 10px;
+  padding: 20px;
+  background: #222;
+  color: #f5f5f5;
   font-size: 14px;
-  margin-top: auto; /* pushes footer to bottom */
 }
 
-/* Responsive Design */
+/* ===== Responsive Design ===== */
 @media (max-width: 1024px) {
-  .what {
-    font-size: 28px;
-  }
-  .box img {
-    height: 160px;
+  .services .box {
+    width: 45%;   /* two cards per row on tablets */
   }
 }
 
 @media (max-width: 768px) {
-  .content {
+  .services {
     flex-direction: column;
-    gap: 15px;
-    padding: 15px 0;
+    align-items: center;
   }
-  .box h1 {
-    font-size: 18px;
+
+  .services .box {
+    width: 90%;   /* single card full width on mobile */
+    max-width: 400px;
   }
-  .box p {
-    font-size: 14px;
+
+  .what {
+    font-size: 26px;
   }
 }
 
 @media (max-width: 480px) {
+  .container .image img {
+    width: 90px;
+    height: 90px;
+  }
+  .content {
+    gap: 15px;
+  }
+
+  .content a {
+    font-size: 14px;
+  }
+
   .what {
-    font-size: 24px;
-    margin: 20px 0;
+    font-size: 22px;
   }
-  .box {
-    padding: 15px;
-  }
-  .box img {
-    height: 150px;
-  }
-  .box a {
-    font-size: 13px;
-    padding: 8px 14px;
+
+  .services .box h1 {
+    font-size: 18px;
   }
 }
-
-
