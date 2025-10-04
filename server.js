@@ -453,6 +453,12 @@ app.get("/reviews-delete/:id", async (req, res) => {
   res.redirect("/previous-reviews");
   
 });
+app.get("/logout",async (req,res)=>{
+  res.clearCookie("username");
+ 
+  res.redirect("/");
+
+})
 // app.use((err, req, res, next) => {
 
 app.use((err, req, res, next) => {
