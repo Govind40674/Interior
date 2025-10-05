@@ -115,11 +115,23 @@ app.get("/services", async (req, res) => {
   res.render("services",{data1});
 });
 app.get("/contact",csrfProtection, async (req, res) => {
-  res.render("contact",{csrfToken: req.csrfToken()});
+  const error=req.query.error || null;
+  res.render("contact",{csrfToken: req.csrfToken(),error});
 });
+function isValidEmail(email) {
+  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return regex.test(email);
+}
 app.post("/sendmail",csrfProtection,async(req,res)=>{
  
   let {from,subject,message}=req.body;
+  if(!from||!subject||!message){
+    return res.redirect("/contact?error=All fields are required");
+  }
+  if(!isValidEmail(from)){
+    return res.redirect("/contact?error=Invalid email address");
+  }
+
  
 try{
   let info=await transporter.sendMail({
