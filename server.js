@@ -24,6 +24,8 @@ const Typed = require("typed.js");
 const customer=require("./models/customer");
 const cors=require("cors");
 const { v2: cloudinary } = require("cloudinary");
+const minifyHTML = require("express-minify-html-terser");
+const compression=require("compression");
 
 const fs = require("fs");
 
@@ -51,16 +53,28 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
+app.use(  minifyHTML({
+    override: true,
+   
+    htmlMinifier: {
+      removeComments: true,
+      collapseWhitespace: true,
+      collapseBooleanAttributes: true,
+      removeAttributeQuotes: true,
+      removeEmptyAttributes: true,
+    },
+  }),
+);
+app.use(compression({
+  level:9,
+  threshold: 10 * 1024
+}));
 
 
-// ✅ cookie-based CSRF
+
+
 const csrfProtection = csrf({ cookie: true });
-// app.use(session({
-//   secret:process.env.SECRET,
-//   resave:false,
-//   saveUninitialized:false,
-//   cookie:{maxAge:24*60*60*1000}
-// }));
+
 
 const transporter=nodemailer.createTransport({
   host:"smtp.gmail.com",
