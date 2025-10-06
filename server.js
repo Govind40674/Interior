@@ -26,6 +26,9 @@ const cors=require("cors");
 const { v2: cloudinary } = require("cloudinary");
 const minifyHTML = require("express-minify-html-terser");
 const compression=require("compression");
+const rateLimit=require("express-rate-limit");
+const helmet=require("helmet");
+
 
 const fs = require("fs");
 
@@ -34,7 +37,11 @@ cloudinary.config({
   api_key:    process.env.CLOUDINARY_API_KEY,
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
-
+const limiter=rateLimit({
+  windowMs: 60 * 1000, // 15 minutes
+  max: 100, // limit each IP to 100 requests per windowMs
+  message: "Too many requests from this IP, please try again after 15 minutes",
+});
 
 
 
@@ -69,7 +76,8 @@ app.use(compression({
   level:9,
   threshold: 10 * 1024
 }));
-
+app.use(limiter);
+app.use(helmet());
 
 
 
