@@ -11,7 +11,7 @@ body {
   color: #333;
   line-height: 1.6;
 }
-#preloader {
+/* #preloader {
   position: fixed;
   inset: 0;
   background: rgba(255,255,255,0.95);
@@ -24,8 +24,24 @@ body {
 .loader img {
   max-width: 80px;
   margin: 0 15px;
+} */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
 }
 
+.loader img {
+  width: 90px;
+  animation: spin 1.2s linear infinite;
+}
 /* Section Headings */
 .do,
 .sectio-client h1,
