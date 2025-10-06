@@ -75,10 +75,16 @@ The mission of our organization is to always offer effective solutions to our cl
 </body>
 <script>
   // Hide preloader when page fully loads
-  window.addEventListener("load", function() {
-    const preloader = document.getElementById("preloader");
+  // window.addEventListener("load", function() {
+  //   const preloader = document.getElementById("preloader");
+  //   preloader.style.display = "none";
+  // });
+    window.addEventListener("load", function() {
+  const preloader = document.getElementById("preloader");
+  setTimeout(() => {
     preloader.style.display = "none";
-  });
+  }, 1500); // keep loader for 1.5s
+});
 </script>
 
 </html>
