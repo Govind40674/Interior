@@ -43,6 +43,10 @@ body {
   width: 90px;
   animation: spin 1.2s linear infinite;
 }
+@keyframes spin {
+  from { transform: rotate(0); }
+  to { transform: rotate(360deg); }
+}
 
 /* Page Title */
 h1 {
