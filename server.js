@@ -171,7 +171,7 @@ app.post("/login-push", csrfProtection,async (req, res) => {
 
     res.redirect("/admin");
   } else {
-    res.render("login",{error:"Invalid username or password",csrfToken: req.csrfToken()});
+    res.render("login",{error:"Invalid username or eamil or password",csrfToken: req.csrfToken()});
   }
 });
 app.get("/admin", csrfProtection,async (req, res) => {
